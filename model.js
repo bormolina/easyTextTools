@@ -3,8 +3,8 @@ function setOutput(val){
 }
 
 function listReplace(){
-	var rawList1 = document.getElementById("listParams1").value;
-	var rawList2 = document.getElementById("listParams2").value;
+	var rawList1 = document.getElementById("input0").value;
+	var rawList2 = document.getElementById("input1").value;
 	var list1 = rawList1.split(",");
 	var list2 = rawList2.split(",");
 	
@@ -22,7 +22,7 @@ function listReplace(){
 		}
 	}
 	
-	setOutput(multiLine);
+	setOutput(output);
 }
 
 function upperCase(){

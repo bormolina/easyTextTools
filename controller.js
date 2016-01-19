@@ -54,6 +54,14 @@ input.addEventListener('select', function(){
 			var cInput = selectedFn.inputs[i];
 			if(cInput){
 				var newInput = document.createElement("input");
+				var newLabel = document.createElement("label");
+				
+				newLabel.innerHTML = cInput.name;
+				
+				newInput.setAttribute("id","input"+i);
+				newInput.setAttribute("class","form-control");
+				
+				document.getElementById("inputArea").appendChild(newLabel);
 				document.getElementById("inputArea").appendChild(newInput);
 			}
 		}
