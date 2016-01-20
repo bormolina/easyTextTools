@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 Seleccionammos la función escogida por el usuario en el input de function
 **/
 var input = document.getElementById('functionInput');
-input.addEventListener('select', function(){
+input.addEventListener('change', function(){
 	
 	if(input.value){
 		//Limpiamos las input previas
@@ -54,6 +54,14 @@ input.addEventListener('select', function(){
 			var cInput = selectedFn.inputs[i];
 			if(cInput){
 				var newInput = document.createElement("input");
+				var newLabel = document.createElement("label");
+				
+				newLabel.innerHTML = cInput.name;
+				
+				newInput.setAttribute("id","input"+i);
+				newInput.setAttribute("class","form-control");
+				
+				document.getElementById("inputArea").appendChild(newLabel);
 				document.getElementById("inputArea").appendChild(newInput);
 			}
 		}
