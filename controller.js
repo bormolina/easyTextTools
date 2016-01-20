@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 Seleccionammos la función escogida por el usuario en el input de function
 **/
 var input = document.getElementById('functionInput');
-input.addEventListener('select', function(){
+input.addEventListener('change', function(){
 	
 	if(input.value){
 		//Limpiamos las input previas
