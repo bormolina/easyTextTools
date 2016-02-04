@@ -140,5 +140,5 @@ function createHash(){
 }
 
 var hash = createHash();
-var selectedFn = null;
+var selectedFn = functions[0];
 var finalOutput = "";
