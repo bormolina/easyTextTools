@@ -1,5 +1,5 @@
 # easyTextTools
-Herramienta online de transformación de textos. Pretende llevar el potencial de las expresiones regulares para la búsqueda en textos y modificación de los mismos a los usuarios no expertos.
+Herramienta online de transformación de textos http://themakerbb.github.io/easyTextTools/ . Pretende llevar el potencial de las expresiones regulares para la búsqueda en textos y modificación de los mismos a los usuarios no expertos.
 
 Para más info puede visitar el blog del proyecto https://easytexttools.wordpress.com/ 
 
