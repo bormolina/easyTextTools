@@ -1,10 +1,19 @@
+var view = new Object();
+
+view.fnSelector = "functionInput";
+view.outputSelector = "outputData";
+view.inputAreaSelector = "inputArea";
+
+view.fnField = document.getElementById(view.fnSelector);
+view.outputField = document.getElementById(view.outputSelector);
+view.inputAreaField =  document.getElementById(view.inputAreaSelector);
+
 function setOutput(){
-	document.getElementById("outputData").value = finalOutput;
+	view.outputField.value = finalOutput;
 }
 
 function refreshInputs(){
-	if(selectedFn && selectedFn.extraInputs.length){
-		var inputArea = document.getElementById('inputArea');
+	if(selectedFn.extraInputs.length){
 		for(i in selectedFn.extraInputs){
 			var cInput = selectedFn.extraInputs[i];
 			if(cInput){
@@ -16,12 +25,24 @@ function refreshInputs(){
 				newInput.setAttribute("id","input"+i);
 				newInput.setAttribute("class","form-control");
 				
-				document.getElementById("inputArea").appendChild(newLabel);
-				document.getElementById("inputArea").appendChild(newInput);
+				view.inputAreaField.appendChild(newLabel);
+				view.inputAreaField.appendChild(newInput);
 			}
 		}
 	}
 }
+
+/**
+function testSetInput(){
+	
+	if(selectedFn.input){
+		
+	}
+	else{
+		
+	}
+}
+**/
 
 /*document.addEventListener("DOMContentLoaded", function(event) {
 	var names = Object.keys(hash);
@@ -36,21 +57,21 @@ function refreshInputs(){
 
 
 /**
-Seleccionammos la función escogida por el usuario en el input de function
+A ejecutar cada vez que el usuario cambie de función.
 **/
-var input = document.getElementById('functionInput');
-input.addEventListener('change', function(){
-	console.log("me ejecuto");
-	if(input.value){
+
+$("#"+view.fnSelector).on("select2:select", function (e) { 
+	if(view.fnField.value){
+		console.log(view.fnField.value);
 		//Limpiamos las input previas
-		var myNode = document.getElementById("inputArea");
+		var myNode = view.inputAreaField;
 		while (myNode.firstChild) {
 			myNode.removeChild(myNode.firstChild);
 		}
 			
-		console.log(input.value);
 		selectedFn = functions.find(function(element){
-			if(element.names.indexOf(input.value)>-1){
+			if(element.names.indexOf(view.fnField.value)>-1){
+				console.log()
 				return true;
 			}
 		});
@@ -61,5 +82,4 @@ input.addEventListener('change', function(){
 	Creamos dinámicamente los campos de las inputs si la fn seleccionada las tuviese
 	**/
 	refreshInputs();
-	
 });

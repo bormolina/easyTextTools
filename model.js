@@ -42,7 +42,7 @@ var functions = [
 	},
 	{
 		names : ["expandTwigAngularBracesBinding"],
-		input : true,
+		input : false,
 		extraInputs : [],
 		fn : expandTwigAngularBracesBinding,
 		description : "lalilou",
@@ -50,8 +50,8 @@ var functions = [
 	},
 	{
 		names : ["expandCssInclude"],
-		input : true,
-		inpextraInputsuts : [],
+		input : false,
+		extraInputs : [],
 		fn : expandCssInclude,
 		description : "lalilou",
 		sampleInput : ""
